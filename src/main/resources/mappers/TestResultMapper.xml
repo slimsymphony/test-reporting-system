@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nokia.mp.testdatacenter.dao.TestResultMapper">
+
+    <insert id="insertTestResult" parameterType="TestResult">
+        insert into test_results(caseId,result,execId,duration,message,detail,bugId,bugInfo,reference,oriresult,subid) values(#{caseId},#{result},#{execId},#{duration},#{message},#{detail},#{bugId},#{bugInfo},#{reference},#{oriresult},#{subid})
+    </insert>
+
+    <select id="getTestResult" resultType="TestResult" parameterType="int">
+        select * from test_results where caseId=#{caseId}
+    </select>
+</mapper>

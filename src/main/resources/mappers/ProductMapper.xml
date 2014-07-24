@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nokia.mp.testdatacenter.dao.ProductMapper">
+
+    <insert id="insertProduct" parameterType="Product" useGeneratedKeys="true" keyProperty="id">
+        insert into products(name,platformid,valid,created) values(#{name},#{platformid},#{valid},#{created})
+    </insert>
+
+    <select id="findProducts" resultType="Product">
+        select * from products
+    </select>
+    <select id="findProductById" resultType="Product">
+        select * from products where id=#{id}
+    </select>
+    <select id="findProductByName" resultType="Product">
+        select * from products where name=#{name}
+    </select>
+</mapper>

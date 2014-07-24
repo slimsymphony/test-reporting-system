@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nokia.mp.testdatacenter.service.executionStatusMapper">
+
+    <!-- get ok number with product=all testware=all from=f to=t -->
+    <select id="findExecutionByConditions_ts_p_st_et" resultType="ExecutionStatus">
+        SELECT id, starttime, status FROM aol_reporting.executions WHERE starttime > #{starttime} and #{endtime} > starttime  ORDER BY starttime
+    </select>
+
+    <select id="findExecutionByConditions_tsid_pid_st_et" resultType="ExecutionStatus">
+        SELECT id, starttime, status FROM aol_reporting.executions WHERE starttime > #{starttime} and #{endtime} > starttime  ORDER BY starttime
+    </select>
+
+</mapper>

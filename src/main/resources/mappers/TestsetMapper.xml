@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+<!DOCTYPE mapper   
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nokia.mp.testdatacenter.dao.TestsetMapper">
+
+    <insert id="insertTestset" parameterType="Testset" useGeneratedKeys="true" keyProperty="id">
+        insert into testsets(name) values(#{name})
+    </insert>
+
+    <select id="getTestset" resultType="Testset" parameterType="java.lang.String">
+        select * from testsets where name=#{name}
+    </select>
+    <select id="findTestsetById" resultType="Testset" parameterType="int">
+        select * from testsets where id=#{id}
+    </select>
+    <select id="findAllTestsets" resultType="Testset">
+        select * from testsets
+    </select>
+</mapper>

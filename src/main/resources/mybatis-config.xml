@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>   
+<!DOCTYPE configuration   
+    PUBLIC "-//mybatis.org//DTD Config 3.0//EN"   
+    "http://mybatis.org/dtd/mybatis-3-config.dtd">   
+    
+<configuration>   
+    <settings>   
+        <!-- changes from the defaults for testing -->   
+        <setting name="cacheEnabled" value="false" />   
+        <setting name="useGeneratedKeys" value="true" />   
+        <setting name="defaultExecutorType" value="REUSE" />   
+    </settings>   
+    <typeAliases>   
+       <typeAlias alias="User" type="com.nokia.mp.testdatacenter.model.User"/>   
+       <typeAlias alias="Execution" type="com.nokia.mp.testdatacenter.model.Execution"/>   
+       <typeAlias alias="Testset" type="com.nokia.mp.testdatacenter.model.Testset"/>   
+       <typeAlias alias="TestsetCase" type="com.nokia.mp.testdatacenter.model.TestsetCase"/>   
+       <typeAlias alias="Testcase" type="com.nokia.mp.testdatacenter.model.Testcase"/>   
+       <typeAlias alias="TestResult" type="com.nokia.mp.testdatacenter.model.TestResult"/>   
+       <typeAlias alias="Product" type="com.nokia.mp.testdatacenter.model.Product"/>   
+    </typeAliases>   
+    <mappers>   
+        <mapper resource="mappers/UserMapper.xml" />   
+        <mapper resource="mappers/ExecutionMapper.xml" />   
+        <mapper resource="mappers/TestsetMapper.xml" />   
+        <mapper resource="mappers/TestsetCaseMapper.xml" />   
+        <mapper resource="mappers/TestcaseMapper.xml" />   
+        <mapper resource="mappers/TestResultMapper.xml" />   
+        <mapper resource="mappers/ProductMapper.xml" />   
+    </mappers>   
+</configuration>

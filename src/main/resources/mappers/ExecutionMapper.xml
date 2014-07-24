@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.nokia.mp.testdatacenter.dao.ExecutionMapper">
+
+    <insert id="insertExecution" parameterType="Execution" useGeneratedKeys="true" keyProperty="id">
+        insert into executions(name,starttime,endtime,passCnt,failCnt,url,testsetId,branch,manifest,repo,productid,platform,variant,relpath,testfilter,duration,verifytype,noresultCnt,sw,orisw,report) values(#{name},#{starttime},#{endtime},#{passCnt},#{failCnt},#{url},#{testsetId},#{branch},#{manifest},#{repo},#{productid},#{platform},#{variant},#{relpath},#{testfilter},#{duration},#{verifytype},#{noresultCnt},#{sw},#{orisw},#{report})
+    </insert>
+
+    <select id="getExecution" resultType="Execution" parameterType="java.lang.String">
+        select * from executions where name=#{name}
+    </select>
+
+    <select id="findExecutionByAllConditions" resultType="Execution" >
+        <![CDATA[
+            select * from executions where testsetId=#{testsetId} and productid=#{productid} and starttime>=#{starttime} and endtime<=#{endtime} ORDER BY id
+        ]]>
+
+    </select>
+    <select id="findAllExecutions" resultType="Execution" >
+        select * from executions
+    </select>
+    <select id="findExecutionsByEndTime" resultType="Execution">
+     <![CDATA[
+        select * from executions where endtime<=#{endtime}
+        ]]>
+    </select>
+    <select id="findExecutionsByTestsetAndStartTime" resultType="Execution">
+        select * from executions where testsetId=#{testsetId} and starttime>=#{starttime}
+    </select>
+    <select id="findExecutionsByTestsetAndProductAndStartTime" resultType="Execution">
+        select * from executions where testsetId=#{testsetId} and productid=#{productid} and starttime>=#{starttime}
+    </select>
+    <select id="findExecutionsByTestsetAndProductAndEndTime" resultType="Execution">
+     <![CDATA[
+        select * from executions where testsetId=#{testsetId} and productid=#{productid} and endtime<=#{endtime}
+        ]]>
+    </select>
+    <select id="findExecutionsByTestsetAndEndTime" resultType="Execution">
+    <![CDATA[
+        select * from executions where testsetId=#{testsetId} and endtime<=#{endtime}
+         ]]>
+    </select>
+    <select id="findExecutionsByTestsetAndProduct" resultType="Execution">
+        select * from executions where testsetId=#{testsetId} and productid=#{productid}
+    </select>
+    <select id="findExecutionsByTestsetAndStartTimeAndEndTime" resultType="Execution">
+    <![CDATA[
+        select * from executions where testsetId=#{testsetId} and starttime>=#{starttime} and endtime<=#{endtime}
+        ]]>
+    </select>
+    <select id="findExecutionsByStartTime" resultType="Execution">
+        select * from executions where starttime>=#{starttime}
+    </select>
+    <select id="findExecutionsByTestset" resultType="Execution">
+        select * from executions where testsetId=#{testsetId}
+    </select>
+    <select id="findExecutionsByProduct" resultType="Execution">
+        select * from executions where productid=#{productid}
+    </select>
+    <select id="findExecutionsByStartTimeAndEndTime" resultType="Execution">
+     <![CDATA[
+        select * from executions where starttime>=#{starttime} and endtime<=#{endtime}
+        ]]>
+    </select>
+    <select id="findExecutionsByProductAndStartTimeAndEndTime" resultType="Execution">
+    <![CDATA[
+        select * from executions where productid=#{productid} and starttime>=#{starttime} and endtime<=#{endtime}
+        ]]>
+    </select>
+    <select id="findExecutionsByProductAndStartTime" resultType="Execution">
+        select * from executions where productid=#{productid} and starttime>=#{starttime}
+    </select>
+    <select id="findExecutionsByProductAndEndTime" resultType="Execution">
+     <![CDATA[
+        select * from executions where productid=#{productid} and endtime<=#{endtime}
+        ]]>
+    </select>
+</mapper>

@@ -1,0 +1,10 @@
+.project
+.settings/
+target/
+*/.project
+*/.settings/
+*/.classpath
+*/target/
+*/logs/
+*/*.db
+*/workspace*/

@@ -1,0 +1,3 @@
+﻿<%@ page contentType="text/json;charset=utf-8" %>[{"Product":"peridotss","TestSet":"testset_1", "Time":"2013/6/12", "Trigger":"Commit","Times":"12","Mean":"10","Max":"5","Min":"6"},
+{"Product":"peridotds","TestSet":"testset_2","Time":"2013/7/12","Trigger":"Time","Times":"29","Mean":"10","Max":"23","Min":"121"},
+{"Product":"aquass","TestSet":"testset_3","Time":"2014/6/12","Trigger":"Commit","Times":"5","Mean":"12","Max":"8","Min":"10"}]
